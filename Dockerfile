@@ -4,5 +4,7 @@ MAINTAINER Ondrej Popelka <ondrej.popelka@keboola.com>
 
 WORKDIR /tmp
 
+COPY init.R /tmp/init.R
+
 # Install some commonly used R packages 
-RUN Rscript ./init.R
+RUN Rscript /tmp/init.R
