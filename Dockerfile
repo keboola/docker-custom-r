@@ -1,7 +1,7 @@
-# VERSION 1.0.1
 FROM keboola/docker-base-r
 MAINTAINER Ondrej Popelka <ondrej.popelka@keboola.com>
 
+ENV DOCKER_CUSTOM_VERSION 0.0.1
 WORKDIR /tmp
 
 COPY init.R /tmp/init.R
