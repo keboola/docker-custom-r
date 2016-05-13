@@ -1,4 +1,4 @@
-FROM quay.io/keboola/docker-base-r-packages:3.2.1-m
+FROM quay.io/keboola/docker-base-r-packages:3.2.5-b
 MAINTAINER Ondrej Popelka <ondrej.popelka@keboola.com>
 
 COPY init.R /tmp/init.R
