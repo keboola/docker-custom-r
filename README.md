@@ -1,3 +1,2 @@
 # Keboola Docker Custom R
-Base image for Custom R applications. See [wiki](https://sites.google.com/a/keboola.com/wiki/home/keboola-connection/devel-space/integrating-with-kbc/custom-applications) for more details about building custom applications.
-
+Base image for Custom R applications. See [documentation](https://developers.keboola.com/extend/custom-science/r/) for more details about building custom science extensions.
