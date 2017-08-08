@@ -1,8 +1,21 @@
 #!/bin/bash
+set -e
 
 docker login -u="$QUAY_USERNAME" -p="$QUAY_PASSWORD" quay.io
-docker tag keboola/docker-custom-r quay.io/keboola/docker-custom-r:$TRAVIS_TAG
-docker tag keboola/docker-custom-r quay.io/keboola/docker-custom-r:latest
+docker tag ${KBC_APP_REPOSITORY} quay.io/${KBC_APP_REPOSITORY}:${TRAVIS_TAG}
+docker tag ${KBC_APP_REPOSITORY} quay.io/${KBC_APP_REPOSITORY}:latest
 docker images
-docker push quay.io/keboola/docker-custom-r:$TRAVIS_TAG
-docker push quay.io/keboola/docker-custom-r:latest
+docker push quay.io/${KBC_APP_REPOSITORY}:${TRAVIS_TAG}
+docker push quay.io/${KBC_APP_REPOSITORY}:latest
+
+docker pull quay.io/keboola/developer-portal-cli-v2:latest
+export REPOSITORY=`docker run --rm  \
+    -e KBC_DEVELOPERPORTAL_USERNAME -e KBC_DEVELOPERPORTAL_PASSWORD -e KBC_DEVELOPERPORTAL_URL \
+    quay.io/keboola/developer-portal-cli-v2:latest ecr:get-repository ${KBC_DEVELOPERPORTAL_VENDOR} ${KBC_DEVELOPERPORTAL_APP}`
+docker tag ${KBC_APP_REPOSITORY}:latest ${REPOSITORY}:${TRAVIS_TAG}
+docker tag ${KBC_APP_REPOSITORY}:latest ${REPOSITORY}:latest
+eval $(docker run --rm \
+    -e KBC_DEVELOPERPORTAL_USERNAME -e KBC_DEVELOPERPORTAL_PASSWORD -e KBC_DEVELOPERPORTAL_URL \
+    quay.io/keboola/developer-portal-cli-v2:latest ecr:get-login ${KBC_DEVELOPERPORTAL_VENDOR} ${KBC_DEVELOPERPORTAL_APP})
+docker push ${REPOSITORY}:${TRAVIS_TAG}
+docker push ${REPOSITORY}:latest
