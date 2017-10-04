@@ -2,9 +2,9 @@ sudo: required
 language: bash
 services:
   - docker
-script: 
+install: 
   - docker build -t keboola/docker-custom-r .
-after_success:
+script:
   - docker images
 deploy:
   provider: script
