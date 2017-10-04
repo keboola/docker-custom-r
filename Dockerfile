@@ -1,6 +1,7 @@
 FROM rocker/r-ver:3.4.1
 
-ENV PATH=/usr/local/lib/R/bin/:$PATH
+ENV PATH /usr/local/lib/R/bin/:$PATH
+ENV R_HOME /usr/local/lib/R/
 
 WORKDIR /tmp
 
