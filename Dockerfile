@@ -9,13 +9,14 @@ RUN mkdir /usr/share/doc/R${R_VERSION} \
     && echo 'options(repos = c(CRAN = "https://cran.r-project.org", "https://cran.rstudio.com/", "https://mirrors.nics.utk.edu/cran/", "https://cran.mtu.edu/"))' >> ${R_HOME}/etc/Rprofile.site \
     && echo 'options(download.file.method = "libcurl")' >> ${R_HOME}/etc/Rprofile.site
 
-# Install dependencies for packages (gdal)
+# Install dependencies for packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
         default-jdk \
         ed \
+        git \
         libbz2-dev \
         libcairo2-dev \
         libgdal-dev \
