@@ -6,7 +6,7 @@ withCallingHandlers(install.packages(
     INSTALL_opts = c("--no-html")
 ), warning = function(w) stop(w))
 
-install some commonly used packages
+#install some commonly used packages
 withCallingHandlers(install.packages(
     c(
         'BTYD',
