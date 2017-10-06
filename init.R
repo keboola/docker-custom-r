@@ -1,12 +1,12 @@
 # install really required packages
 
 withCallingHandlers(install.packages(
-    c('Cairo', 'curl', 'DBI', 'devtools', 'git2r', 'jsonlite', 'rJava', 'RJDBC', 'rversions'), 
+    c('Cairo', 'DBI', 'devtools', 'rJava', 'RJDBC', 'rversions'), 
     dependencies = c("Depends", "Imports", "LinkingTo"), 
     INSTALL_opts = c("--no-html")
 ), warning = function(w) stop(w))
 
-#install some commonly used packages
+install some commonly used packages
 withCallingHandlers(install.packages(
     c(
         'BTYD',
@@ -15,7 +15,6 @@ withCallingHandlers(install.packages(
         'earth', 'ellipse', 'e1071',
         'forecast', 'foreach',
         'gam', 'gbm', 'gdata', 'ggplot2', 'gsl',
-        'httr',
         'ipred', 'ISOweek',
         'kernlab', 'klaR', 
         'lattice',

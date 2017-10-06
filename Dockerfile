@@ -1,19 +1,17 @@
 FROM rocker/r-ver:3.4.1
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
-ENV R_HOME /usr/local/lib/R/
+ENV R_HOME /usr/local/lib/R
 
 WORKDIR /tmp
 
 # Custom Setup
 RUN mkdir /usr/share/doc/R${R_VERSION} \
-    && echo 'options(repos = c(CRAN = "https://cran.r-project.org", "https://cran.rstudio.com/", "https://mirrors.nics.utk.edu/cran/", "https://cran.mtu.edu/"))' >> ${R_HOME}/etc/Rprofile.site \
-    && echo 'options(download.file.method = "libcurl")' >> ${R_HOME}/etc/Rprofile.site
+    && echo 'options(download.file.method = "libcurl")' >> /usr/local/lib/R/etc/Rprofile.site
 
 # Install dependencies for packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        ca-certificates \
         curl \
         default-jdk \
         ed \
@@ -28,7 +26,6 @@ RUN apt-get update \
         libxt-dev \
         xfonts-base \
         unzip \
-        wget \
         x11proto-core-dev \
     && rm -rf /var/lib/apt/lists/*
 
