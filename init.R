@@ -1,7 +1,7 @@
 # install really required packages
 
 withCallingHandlers(install.packages(
-    c('Cairo', 'codetools', 'curl', 'DBI', 'devtools', 'git2r', 'jsonlite', 'rJava', 'RJDBC', 'roxygen2', 'rversions', 'rstudioapi'), 
+    c('Cairo', 'curl', 'DBI', 'devtools', 'git2r', 'jsonlite', 'rJava', 'RJDBC', 'rversions'), 
     dependencies = c("Depends", "Imports", "LinkingTo"), 
     INSTALL_opts = c("--no-html")
 ), warning = function(w) stop(w))
