@@ -21,7 +21,7 @@ withCallingHandlers(install.packages(
         'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet', 
         'party', 'pamr', 'pls', 'plyr', 'pROC', 'proxy',
-        'randomForest', 'RANN', 'reshape2', 'R6', 'Rcpp', 'RcppArmadillo', 'rgdal',
+        'randomForest', 'RANN', 'reshape2', 'R6', 'RcppArmadillo', 'rgdal',
         'spls', 'sqldf', 'stringi', 'stringr', 'subselect', 'superpc',
         'testthat', 'timeDate', 'tree',
         'zoo'
