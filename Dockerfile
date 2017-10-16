@@ -19,6 +19,8 @@ RUN apt-get update \
         libbz2-dev \
         libcairo2-dev \
         libgdal-dev \
+        libcgal-dev \
+        libglu1-mesa-dev \
         libgsl0-dev \
         libproj-dev \
         libssl-dev \
