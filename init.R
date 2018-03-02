@@ -41,5 +41,4 @@ packageurl <- "https://cran.r-project.org/src/contrib/Archive/ChannelAttribution
 install.packages(packageurl, repos=NULL, type="source")
 
 # install the R application
-devtools::install_github('keboola/r-application', ref = "1.0.2")
-devtools::install_github('keboola/r-docker-application', ref = "1.0.3")
+devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
