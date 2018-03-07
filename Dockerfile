@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.4.2
+FROM rocker/r-ver:3.4.3
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -6,8 +6,7 @@ ENV R_HOME /usr/local/lib/R
 WORKDIR /tmp
 
 # Custom Setup
-RUN mkdir /usr/share/doc/R${R_VERSION} \
-    && echo 'options(download.file.method = "libcurl")' >> /usr/local/lib/R/etc/Rprofile.site
+RUN mkdir /usr/share/doc/R${R_VERSION} 
 
 # Install dependencies for packages
 RUN apt-get update \
@@ -31,7 +30,13 @@ RUN apt-get update \
         x11proto-core-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY init.R /tmp/init.R
+COPY init-1.R /tmp/init-1.R
+COPY init-2.R /tmp/init-2.R
 
 # Install some commonly used R packages
-RUN R CMD javareconf && /usr/local/lib/R/bin/Rscript /tmp/init.R
+RUN R CMD javareconf \
+    && /usr/local/lib/R/bin/Rscript /tmp/init-1.R \
+    && rm -f /tmp/init-1.R
+
+RUN /usr/local/lib/R/bin/Rscript /tmp/init-2.R \
+    && rm -f /tmp/init-2.R
