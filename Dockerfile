@@ -26,8 +26,9 @@ RUN apt-get update \
         libssl-dev \
         libx11-dev \
         libxt-dev \
-        xfonts-base \
+        tk \
         unzip \
+        xfonts-base \
         x11proto-core-dev \
     && rm -rf /var/lib/apt/lists/*
 
