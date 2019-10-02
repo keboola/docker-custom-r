@@ -1,4 +1,4 @@
-FROM quay.io/keboola/docker-base-r:4.0.1
+FROM quay.io/keboola/docker-base-r:4.0.2
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
