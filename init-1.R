@@ -12,7 +12,7 @@ withCallingHandlers(install.packages(
         'lattice', 
         'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet', 
-        'party', 'pamr', 'pls', 'pROC', 'proxy',
+        'party', 'pamr', 'pls', 'pROC', 'prophet', 'proxy',
         'randomForest', 'RANN', 'rgdal',
         'spls', 'sqldf', 'subselect', 'superpc',
         'testthat', 'timeDate', 'tree',
