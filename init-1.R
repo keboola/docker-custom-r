@@ -8,21 +8,21 @@ withCallingHandlers(install.packages(
         'forecast', 'foreach',
         'gam', 'gbm', 'gdata', 'gsl',
         'ipred', 'ISOweek',
-        'kernlab', 'klaR', 
-        'lattice', 
+        'kernlab', 'klaR',
+        'lattice',
         'MASS', 'mda', 'mgcv', 'mlbench',
-        'nlme', 'nnet', 
+        'nlme', 'nnet',
         'party', 'pamr', 'pls', 'pROC', 'prophet', 'proxy',
         'randomForest', 'RANN', 'rgdal',
-        'spls', 'sqldf', 'subselect', 'superpc',
+        'spls', 'sqldf', 'superpc',
         'testthat', 'timeDate', 'tree',
         'zoo'
-    ), 
+    ),
     lib = "/usr/local/lib/R/site-library/",
-    dependencies = c("Depends", "Imports", "LinkingTo"), 
+    dependencies = c("Depends", "Imports", "LinkingTo"),
     INSTALL_opts = c("--no-html"),
     Ncpus = 2
 ), warning = function(w) stop(w))
 
-# install the R application 
+# install the R application
 devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
