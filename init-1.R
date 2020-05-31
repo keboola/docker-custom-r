@@ -14,7 +14,7 @@ withCallingHandlers(install.packages(
         'nlme', 'nnet',
         'party', 'pamr', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
         'randomForest', 'RANN', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
-        'spls', 'sqldf', 'subselect', 'superpc',
+        'spls', 'sqldf', 'superpc',
         'testthat', 'tidyverse', 'timeDate', 'tree',
         'zoo'
     ),
