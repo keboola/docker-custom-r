@@ -1,6 +1,3 @@
-# install the R application
-devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
-
 #install some commonly used packages
 withCallingHandlers(install.packages(
     c(
@@ -27,3 +24,5 @@ withCallingHandlers(install.packages(
     Ncpus = 2
 ), warning = function(w) stop(w))
 
+# install the R application
+devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
