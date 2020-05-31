@@ -1,9 +1,12 @@
+# install the R application
+devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
+
 #install some commonly used packages
 withCallingHandlers(install.packages(
     c(
         'BTYD',
-        'car', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
-        'data.table', 'data.tree', 'doParallel', 'dplyr',
+        'car', 'Cairo', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
+        'data.table', 'data.tree', 'DBI', 'devtools', 'doParallel', 'dplyr',
         'earth', 'ellipse', 'e1071',
         'forecast', 'foreach',
         'gam', 'gbm', 'gdata', 'gsl',
@@ -12,10 +15,10 @@ withCallingHandlers(install.packages(
         'lattice',
         'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet',
-        'party', 'pamr', 'pls', 'pROC', 'prophet', 'proxy',
-        'randomForest', 'RANN', 'rgdal',
-        'spls', 'sqldf', 'superpc',
-        'testthat', 'timeDate', 'tree',
+        'party', 'pamr', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
+        'randomForest', 'RANN', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
+        'spls', 'sqldf', 'subselect', 'superpc',
+        'testthat', 'tidyverse', 'timeDate', 'tree',
         'zoo'
     ),
     lib = "/usr/local/lib/R/site-library/",
@@ -24,5 +27,3 @@ withCallingHandlers(install.packages(
     Ncpus = 2
 ), warning = function(w) stop(w))
 
-# install the R application
-devtools::install_github('keboola/r-docker-application', ref = "2.0.2")

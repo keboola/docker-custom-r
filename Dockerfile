@@ -6,6 +6,46 @@ ARG GITHUB_PAT
 
 WORKDIR /tmp
 
+# Custom Setup
+RUN mkdir /usr/share/doc/R${R_VERSION}
+
+# Install dependencies for packages
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        curl \
+        default-jdk \
+        ed \
+        emacs \
+        git \
+        inkscape \
+        jed \
+        libbz2-dev \
+        libcairo2-dev \
+        libgdal-dev \
+        libcgal-dev \
+        libxext-dev \
+        libglu1-mesa-dev \
+        libgsl0-dev \
+        libproj-dev \
+        libsm6 \
+        libssl-dev \
+        libx11-dev \
+        libxrender1 \
+        libxt-dev \
+        lmodern \
+        pandoc \
+        python-dev \
+        python3-pip \
+        python3-setuptools \
+        tk \
+        unzip \
+        xfonts-base \
+        x11proto-core-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /tmp
+
 COPY init-1.R /tmp/init-1.R
 
 # Install some commonly used R packages
@@ -14,23 +54,3 @@ RUN R CMD javareconf \
     && /usr/local/lib/R/bin/Rscript /tmp/init-1.R \
     && rm -f /tmp/init-1.R \
     && rm -f .Renviron
-
-# some stuff that is standard in the other base images
-RUN apt-get update && apt-get upgrade -yq python3 \
-    && apt-get install -yq --no-install-recommends \
-        build-essential \
-        emacs \
-        git \
-        inkscape \
-        jed \
-        libsm6 \
-        libxext-dev \
-        libxrender1 \
-        lmodern \
-        pandoc \
-        python-dev \
-        python3-pip \
-        python3-setuptools \
-        unzip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
