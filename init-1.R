@@ -24,5 +24,11 @@ withCallingHandlers(install.packages(
     Ncpus = 2
 ), warning = function(w) stop(w))
 
+# tmp: the package subselect isn't available on MRAN for r 3.6.2, so we'll need to get it from a different repo
+withCallingHandlers(install.packages(
+    c("subselect"),
+    repos=c("https://cloud.r-project.org")
+), warning = function(w) stop(w))
+
 # install the R application
 devtools::install_github('keboola/r-docker-application', ref = "2.0.2")
