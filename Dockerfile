@@ -1,4 +1,4 @@
-FROM quay.io/keboola/docker-base-r:4.0.4
+FROM rocker/r-ver:3.6.2
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -6,11 +6,51 @@ ARG GITHUB_PAT
 
 WORKDIR /tmp
 
-COPY init-1.R /tmp/init-1.R
+# Custom Setup
+RUN mkdir /usr/share/doc/R${R_VERSION}
+
+# Install dependencies for packages
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        curl \
+        default-jdk \
+        ed \
+        emacs \
+        git \
+        inkscape \
+        jed \
+        libbz2-dev \
+        libcairo2-dev \
+        libgdal-dev \
+        libcgal-dev \
+        libxext-dev \
+        libglu1-mesa-dev \
+        libgsl0-dev \
+        libproj-dev \
+        libsm6 \
+        libssl-dev \
+        libx11-dev \
+        libxrender1 \
+        libxt-dev \
+        lmodern \
+        pandoc \
+        python-dev \
+        python3-pip \
+        python3-setuptools \
+        tk \
+        unzip \
+        xfonts-base \
+        x11proto-core-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /tmp
+
+COPY init.R /tmp/init.R
 
 # Install some commonly used R packages
 RUN R CMD javareconf \
     && printf "GITHUB_PAT=$GITHUB_PAT\n" > .Renviron \
-    && /usr/local/lib/R/bin/Rscript /tmp/init-1.R \
-    && rm -f /tmp/init-1.R \
+    && /usr/local/lib/R/bin/Rscript /tmp/init.R \
+    && rm -f /tmp/init.R \
     && rm -f .Renviron
