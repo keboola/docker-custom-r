@@ -25,7 +25,7 @@ steps:
   - task: Docker@2
     inputs:
       containerRegistry: 'keboola-4338'
-      repository: 'docker-custom-julia'
+      repository: 'docker-custom-r'
       command: 'build'
       Dockerfile: '**/Dockerfile'
       tags: |
