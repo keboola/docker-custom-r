@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.6.2
+FROM rocker/r-ver:3.6.3
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -47,6 +47,8 @@ RUN apt-get update \
 WORKDIR /tmp
 
 COPY init.R /tmp/init.R
+
+RUN python3 -m pip install --upgrade pip
 
 # Install some commonly used R packages
 RUN R CMD javareconf \
