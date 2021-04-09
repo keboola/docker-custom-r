@@ -2,7 +2,7 @@
 withCallingHandlers(install.packages(
     c(
         'BTYD',
-        'car', 'Cairo', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
+        'car', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
         'data.table', 'data.tree', 'DBI', 'devtools', 'doParallel', 'dplyr',
         'earth', 'ellipse', 'e1071',
         'forecast', 'foreach',

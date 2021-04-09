@@ -38,6 +38,7 @@ RUN apt-get update \
         python-dev \
         python3-pip \
         python3-setuptools \
+        r-cran-cairo \
         tk \
         unzip \
         xfonts-base \
