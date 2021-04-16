@@ -50,4 +50,13 @@ steps:
       tags: '$(imageTag)'
     condition: eq(variables['isTagBuild'], 'true')
     displayName: 'Push latest to ACR'
-      
+
+  - script: printf "%s" "$(imageTag)" > base-r-artifact
+    condition: eq(variables['isTagBuild'], 'true')
+    displayName: Create artifact
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'base-r-artifact'
+      artifact: 'keboola.docker-custom-r.latest-build'
+    condition: eq(variables['isTagBuild'], 'true')
