@@ -57,5 +57,5 @@ RUN R CMD javareconf \
     && /usr/local/lib/R/bin/Rscript /tmp/init.R \
     && rm -f /tmp/init.R \
     && rm -f .Renviron \
-	&& chown :users -R /usr/local/lib/R/site-library \
-	&& chmod a+rwx -R /usr/local/lib/R/site-library
+    && chown :users -R /usr/local/lib/R/site-library \
+    && chmod a+rwx -R /usr/local/lib/R/site-library
