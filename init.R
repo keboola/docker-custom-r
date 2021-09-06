@@ -3,7 +3,7 @@ withCallingHandlers(install.packages(
     c(
         'BTYD',
         'car', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
-        'daiR', 'data.table', 'data.tree', 'DBI', 'devtools', 'doParallel', 'dplyr',
+        'data.table', 'data.tree', 'DBI', 'devtools', 'doParallel', 'dplyr',
         'earth', 'ellipse', 'e1071',
         'forecast', 'foreach', 'fs',
         'gam', 'gbm', 'gdata', 'ggplot2', 'googleCloudStorageR', 'gsl',
@@ -17,7 +17,7 @@ withCallingHandlers(install.packages(
         'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'proxy', 'purrr',
         'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
         'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
-        'tablulizer', 'tablulizerjars', 'testthat', 'tidycells', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
+        'testthat', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
         'unpivotr',
         'zoo'
     ),
