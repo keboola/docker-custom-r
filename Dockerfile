@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.4
+FROM rocker/r-ver:4.0.5
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -15,7 +15,6 @@ RUN apt-get update \
         build-essential \
         curl \
         default-jdk \
-        default-jre \
         ed \
         emacs \
         git \
