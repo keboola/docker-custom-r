@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.4
+FROM rocker/r-ver:4.0.5
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -18,22 +18,31 @@ RUN apt-get update \
         ed \
         emacs \
         git \
+        gsfonts \
+        imagemagick \
         inkscape \
         jed \
         libbz2-dev \
         libcairo2-dev \
+        libcurl4-openssl-dev \
         libgdal-dev \
         libcgal-dev \
         libxext-dev \
         libglu1-mesa-dev \
+        libicu-dev \
         libgsl0-dev \
+        libmagick++-dev \
+        libpng-dev \
+        libpoppler-cpp-dev \
         libproj-dev \
         libsm6 \
         libssl-dev \
         libx11-dev \
+        libxml2-dev \
         libxrender1 \
         libxt-dev \
         lmodern \
+        make \
         pandoc \
         python-dev \
         python3-pip \
@@ -43,6 +52,7 @@ RUN apt-get update \
         unzip \
         xfonts-base \
         x11proto-core-dev \
+        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
