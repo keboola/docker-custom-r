@@ -14,7 +14,7 @@ withCallingHandlers(install.packages(
         'lattice',
         'magrittr', 'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet',
-        'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'proxy', 'purrr',
+        'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
         'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
         'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
         'testthat', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
@@ -26,9 +26,6 @@ withCallingHandlers(install.packages(
     INSTALL_opts = c("--no-html"),
     Ncpus = 2
 ), warning = function(w) stop(w))
-
-# prophet cannot be downloaded from CRAN repository
-devtools::install_github('facebook/prophet', ref='0.6', subdir='/R')
 
 # install the R application
 devtools::install_github('keboola/r-docker-application', ref='2.0.2')
