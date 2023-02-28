@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.2.1
+FROM rocker/r-ver:4.2.2
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -37,6 +37,7 @@ RUN apt-get update \
         libproj-dev \
         libsm6 \
         libssl-dev \
+        libudunits2-dev \
         libx11-dev \
         libxml2-dev \
         libxrender1 \
@@ -44,7 +45,7 @@ RUN apt-get update \
         lmodern \
         make \
         pandoc \
-        python-dev \
+        python-dev-is-python3 \
         python3-pip \
         python3-setuptools \
         r-cran-cairo \

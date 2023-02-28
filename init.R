@@ -16,7 +16,7 @@ withCallingHandlers(install.packages(
         'nlme', 'nnet',
         'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
         'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
-        'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
+        'sf', 'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
         'testthat', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
         'unpivotr',
         'zoo'
