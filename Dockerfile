@@ -42,6 +42,7 @@ RUN apt-get update \
         libxml2-dev \
         libxrender1 \
         libxt-dev \
+        libglpk40 \
         lmodern \
         make \
         pandoc \
