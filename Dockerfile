@@ -26,6 +26,7 @@ RUN apt-get update \
         libcairo2-dev \
         libcurl4-openssl-dev \
         libgdal-dev \
+        libgit2-dev  \
         libcgal-dev \
         libxext-dev \
         libglu1-mesa-dev \
