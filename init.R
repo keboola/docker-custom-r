@@ -1,9 +1,8 @@
 #install some commonly used packages
 withCallingHandlers(install.packages(
     c(
-        'BTYD',
-        'car', 'caret', 'caTools', 'ChannelAttribution', 'Cubist',
-        'data.table', 'data.tree', 'DBI', 'devtools', 'doParallel', 'dplyr',
+        'caret', 'caTools', 'ChannelAttribution', 'Cubist',
+        'data.table', 'data.tree', 'DBI', 'doParallel', 'dplyr',
         'earth', 'ellipse', 'e1071',
         'forecast', 'foreach', 'fs',
         'gam', 'gbm', 'gdata', 'ggplot2', 'googleCloudStorageR', 'gsl',
@@ -15,9 +14,9 @@ withCallingHandlers(install.packages(
         'magrittr', 'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet',
         'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
-        'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
-        'sf', 'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
-        'testthat', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
+        'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rJava', 'RJDBC', 'rversions',
+        'sf', 'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'superpc',
+        'testthat', 'tidyxl', 'timeDate', 'tree',
         'unpivotr',
         'zoo'
     ),
@@ -28,4 +27,4 @@ withCallingHandlers(install.packages(
 ), warning = function(w) stop(w))
 
 # install the R application
-devtools::install_github('keboola/r-docker-application', ref='2.0.2')
+#devtools::install_github('keboola/r-docker-application', ref='2.0.2')
