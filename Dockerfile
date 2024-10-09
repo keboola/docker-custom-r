@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.2.2
+FROM rocker/r-ver:4.4.1
 
 ENV PATH /usr/local/lib/R/bin/:$PATH
 ENV R_HOME /usr/local/lib/R
@@ -26,6 +26,7 @@ RUN apt-get update \
         libcairo2-dev \
         libcurl4-openssl-dev \
         libgdal-dev \
+        libgit2-dev  \
         libcgal-dev \
         libxext-dev \
         libglu1-mesa-dev \

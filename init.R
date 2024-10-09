@@ -15,8 +15,8 @@ withCallingHandlers(install.packages(
         'magrittr', 'MASS', 'mda', 'mgcv', 'mlbench',
         'nlme', 'nnet',
         'party', 'pamr', 'pdfsearch', 'pdftools', 'plotly', 'pls', 'pROC', 'prophet', 'proxy', 'purrr',
-        'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rgdal', 'rJava', 'RJDBC', 'rversions',
-        'sf', 'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'subselect', 'superpc',
+        'randomForest', 'RANN', 'reshape', 'RcppArmadillo', 'rJava', 'RJDBC', 'rversions',
+        'sf', 'spls', 'splitstackshape', 'sqldf', 'staplr', 'stringdist', 'stringi', 'stringr', 'superpc',
         'testthat', 'tidyverse', 'tidyxl', 'timeDate', 'tree',
         'unpivotr',
         'zoo'
