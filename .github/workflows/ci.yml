@@ -43,7 +43,7 @@ jobs:
           sourceImage: keboola/docker-custom-r
           sourceTag: latest
           targetImage: docker-custom-r
-          targetTag: r-${{ github.ref_name }}
+          targetTag: ${{ github.ref_name }}
           acrRegistry: keboola.azurecr.io
           acrUsername: docker-custom-r-push
           acrPassword: ${{ secrets.DOCKER_CUSTOM_R_ACR_PASSWORD }}
