@@ -1,0 +1,50 @@
+name: Build and publish
+on: [ push ]
+
+jobs:
+  build:
+    name: Build R custom image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          echo "Building Docker image keboola/docker-custom-r:latest"
+          docker buildx build --tag keboola/docker-custom-r:latest --output type=docker,dest=/tmp/docker-custom-r.tar .
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: docker-custom-r-${{ github.sha }}
+          path: /tmp/docker-custom-r.tar
+          retention-days: 1
+
+  publish-images:
+    name: Publish images to ACR
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Push R image to ACR
+        uses: ./.github/actions/docker-push
+        with:
+          sourceImage: keboola/docker-custom-r
+          sourceTag: latest
+          targetImage: docker-custom-r
+          targetTag: ${{ github.ref_name }}
+          acrRegistry: keboola.azurecr.io
+          acrUsername: docker-custom-r-push
+          acrPassword: ${{ secrets.DOCKER_CUSTOM_R_ACR_PASSWORD }}
+
